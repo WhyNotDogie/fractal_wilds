@@ -1,5 +1,7 @@
 package dev.dogie.fractal_wilds.worldgen;
 
+import dev.dogie.fractal_wilds.CommonClass;
+
 import com.mojang.datafixers.kinds.App;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.Codec;
@@ -18,6 +20,7 @@ import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.levelgen.RandomState;
 import net.minecraft.world.level.levelgen.blending.Blender;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
@@ -25,15 +28,14 @@ import java.util.concurrent.CompletableFuture;
 // if i disappear tomorrow you know why
 
 public class FWChunkGenerator extends ChunkGenerator {
-
-    public static final MapCodec<FWChunkGenerator> CODEC = ;
+    public static final MapCodec<FWChunkGenerator> CODEC = CommonClass.autoCodec.createDFUMapCodec(FWChunkGenerator.class);
 
     public FWChunkGenerator(BiomeSource biomeSource) {
         super(biomeSource);
     }
 
     @Override
-    protected MapCodec<FWChunkGenerator> codec() {
+    protected @NotNull MapCodec<FWChunkGenerator> codec() {
         return CODEC;
     }
 
