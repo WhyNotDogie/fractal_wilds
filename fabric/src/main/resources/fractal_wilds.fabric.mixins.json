@@ -6,11 +6,11 @@
   "compatibilityLevel": "JAVA_21",
   "mixins": [],
   "client": [
-    "dev.dogie.fractal_wilds.mixin.MixinTitleScreen"
+    "MixinTitleScreen"
   ],
   "server": [],
   "injectors": {
     "defaultRequire": 1
   }
 }
-  
+
